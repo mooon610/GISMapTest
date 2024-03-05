@@ -20,8 +20,8 @@ function App() {
         </nav>
       </header>
       <main>
-        <section>
-          <MappingApp></MappingApp> 
+        <section className="MapSection">
+          <MappingApp></MappingApp>
         </section>
       </main>
       <footer>
@@ -36,10 +36,22 @@ function App() {
 }
 
 function MappingApp() {
-  useEffect(()=>{
+  useEffect(() => {
+    esriConfig.apiKey =
+      "AAPK3010c89f450141c280e54513102608bagL2MJqyCtoc8UMYXm7Ra9EJDXP-m92zkAypGdJI3lERXpluHe5ANRSqslstCFLX-";
 
-  },[])
-  return <div id="viewDiv"></div>
+    const map = new Map({
+      basemap: "arcgis/topographic"
+    })
+
+    const view = new MapView({
+      map: map,
+      center: [-118.805, 34.027], // Longitude, latitude
+      zoom: 13, // Zoom level
+      container: "viewDiv", // Div element
+    });
+  }, []);
+  return <div id='viewDiv'></div>;
 }
 
 export default App;

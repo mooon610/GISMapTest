@@ -1,13 +1,13 @@
 @import "https://js.arcgis.com/4.29/@arcgis/core/assets/esri/themes/light/main.css";
 
 html,
-      body,
-      #viewDiv {
-        padding: 0;
-        margin: 0;
-        height: 100%;
-        width: 100%;
-      }
+body,
+#viewDiv {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+}
 
 div {
   box-sizing: border-box;
@@ -17,7 +17,7 @@ header {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  background: #919D7E;
+  background: #919d7e;
   color: white;
 }
 
@@ -37,7 +37,7 @@ li {
 }
 
 footer {
-  background: #D9D9D9;
+  background: #d9d9d9;
   color: white;
 }
 
@@ -49,4 +49,11 @@ footer {
 
 .footerSection p {
   padding-left: 40px;
+}
+
+.MapSection {
+  max-width: 1200px;
+  height: 500px;
+  margin: 0 auto;
+  padding: 20px 20px;
 }
