@@ -1,9 +1,18 @@
 import "./App.css";
 import { Link, Route, Routes } from "react-router-dom";
 
+import esriConfig from "@arcgis/core/config.js";
 import PolygonGraphics from "./page/PolygonGraphics"
+import MyLocation from "./page/MyLocation";
+import { useEffect } from "react";
 
 function App() {
+  useEffect(()=>{
+    // GISMap apiKey
+    esriConfig.apiKey =
+    "AAPK3010c89f450141c280e54513102608bagL2MJqyCtoc8UMYXm7Ra9EJDXP-m92zkAypGdJI3lERXpluHe5ANRSqslstCFLX-";
+  },[])
+
   return (
     <>
       <header>
@@ -13,7 +22,7 @@ function App() {
               <strong><Link to={"/"}>GIS Map Test</Link></strong>
             </li>
             <li><Link to={"/polygonGrapics"}>PolygonGrapics</Link></li>
-            <li>awt</li>
+            <li><Link to={"/myLocation"}>MyLocation</Link></li>
           </ul>
         </nav>
       </header>
@@ -22,6 +31,7 @@ function App() {
           <Routes>
             <Route exact path="/" element={<div>GISMap 테스트입니다.</div>}></Route>
             <Route path="/polygonGrapics" element={<PolygonGraphics/>}></Route>
+            <Route path="/myLocation" element={<MyLocation/>}></Route>
           </Routes>
         </section>
       </main>

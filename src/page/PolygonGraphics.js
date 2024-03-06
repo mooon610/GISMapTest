@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 
-import esriConfig from "@arcgis/core/config.js";
 import Map from "@arcgis/core/Map.js";
 import MapView from "@arcgis/core/views/MapView.js";
 import Graphic from "@arcgis/core/Graphic.js";
@@ -8,9 +7,6 @@ import GraphicsLayer from "@arcgis/core/layers/GraphicsLayer.js";
 
 function PolygonGraphics() {
     useEffect(() => {
-      esriConfig.apiKey =
-        "AAPK3010c89f450141c280e54513102608bagL2MJqyCtoc8UMYXm7Ra9EJDXP-m92zkAypGdJI3lERXpluHe5ANRSqslstCFLX-";
-  
       const map = new Map({
         basemap: "arcgis/topographic",
       });
@@ -111,7 +107,7 @@ function PolygonGraphics() {
       graphicsLayer.add(polygonGraphic);
     }, []);
   
-    return <div id='viewDiv'></div>;
+    return <div id='viewDiv' style={{height:"500px"}}></div>;
   }
 
   export default PolygonGraphics;
