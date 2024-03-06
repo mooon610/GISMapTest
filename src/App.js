@@ -1,9 +1,7 @@
-import { useEffect } from "react";
-
-import esriConfig from "@arcgis/core/config.js";
-import Map from "@arcgis/core/Map.js";
-import MapView from "@arcgis/core/views/MapView.js";
 import "./App.css";
+import { Link, Route, Routes } from "react-router-dom";
+
+import PolygonGraphics from "./page/PolygonGraphics"
 
 function App() {
   return (
@@ -12,16 +10,19 @@ function App() {
         <nav>
           <ul>
             <li>
-              <strong>GIS Map Test</strong>
+              <strong><Link to={"/"}>GIS Map Test</Link></strong>
             </li>
-            <li>main</li>
+            <li><Link to={"/polygonGrapics"}>PolygonGrapics</Link></li>
             <li>awt</li>
           </ul>
         </nav>
       </header>
       <main>
-        <section className="MapSection">
-          <MappingApp></MappingApp>
+        <section className='MapSection'>
+          <Routes>
+            <Route exact path="/" element={<div>GISMap 테스트입니다.</div>}></Route>
+            <Route path="/polygonGrapics" element={<PolygonGraphics/>}></Route>
+          </Routes>
         </section>
       </main>
       <footer>
@@ -35,23 +36,5 @@ function App() {
   );
 }
 
-function MappingApp() {
-  useEffect(() => {
-    esriConfig.apiKey =
-      "AAPK3010c89f450141c280e54513102608bagL2MJqyCtoc8UMYXm7Ra9EJDXP-m92zkAypGdJI3lERXpluHe5ANRSqslstCFLX-";
-
-    const map = new Map({
-      basemap: "arcgis/topographic"
-    })
-
-    const view = new MapView({
-      map: map,
-      center: [-118.805, 34.027], // Longitude, latitude
-      zoom: 13, // Zoom level
-      container: "viewDiv", // Div element
-    });
-  }, []);
-  return <div id='viewDiv'></div>;
-}
 
 export default App;
