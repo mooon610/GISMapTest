@@ -4,6 +4,7 @@ import { Link, Route, Routes } from "react-router-dom";
 import esriConfig from "@arcgis/core/config.js";
 import PolygonGraphics from "./page/PolygonGraphics"
 import MyLocation from "./page/MyLocation";
+import SearchAddress from "./page/SearchAddress";
 import { useEffect } from "react";
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
             </li>
             <li><Link to={"/polygonGrapics"}>PolygonGrapics</Link></li>
             <li><Link to={"/myLocation"}>MyLocation</Link></li>
+            <li><Link to={"/searchAddress"}>SearchAddress</Link></li>
           </ul>
         </nav>
       </header>
@@ -32,6 +34,7 @@ function App() {
             <Route exact path="/" element={<div>GISMap 테스트입니다.</div>}></Route>
             <Route path="/polygonGrapics" element={<PolygonGraphics/>}></Route>
             <Route path="/myLocation" element={<MyLocation/>}></Route>
+            <Route path="/searchAddress" element={<SearchAddress/>}></Route>
           </Routes>
         </section>
       </main>
