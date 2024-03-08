@@ -24,7 +24,7 @@ function SearchAddress() {
     view.ui.add(search, "top-right"); //Add to the map
   }, []);
 
-  return <div id='viewDiv' style={{ height: "500px" }}></div>;
+  return <div id='viewDiv' style={{ height: "800px" }}></div>;
 }
 
 export default SearchAddress;

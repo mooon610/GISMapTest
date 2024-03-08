@@ -46,7 +46,7 @@ function MyLocation() {
     // });
     // view.ui.add(track, "top-left");
   }, []);
-  return <div id='viewDiv' style={{ height: "500px" }}></div>;
+  return <div id='viewDiv' style={{ height: "800px" }}></div>;
 }
 
 export default MyLocation;

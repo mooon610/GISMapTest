@@ -107,7 +107,7 @@ function PolygonGraphics() {
       graphicsLayer.add(polygonGraphic);
     }, []);
   
-    return <div id='viewDiv' style={{height:"500px"}}></div>;
+    return <div id='viewDiv' style={{height:"800px"}}></div>;
   }
 
   export default PolygonGraphics;
