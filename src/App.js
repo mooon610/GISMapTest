@@ -33,7 +33,7 @@ function App() {
       <main>
         <section className='MapSection'>
           <Routes>
-            <Route exact path="/" element={<div>GISMap 테스트입니다.</div>}></Route>
+            <Route exact path="/" element={<MainPage/>}></Route>
             <Route path="/polygonGrapics" element={<PolygonGraphics/>}></Route>
             <Route path="/myLocation" element={<MyLocation/>}></Route>
             <Route path="/searchAddress" element={<SearchAddress/>}></Route>
@@ -50,6 +50,16 @@ function App() {
       </footer>
     </>
   );
+}
+
+function MainPage() {
+  return (
+    <>
+      <h1>GISMap 테스트 입니다.</h1>
+      <p>ArcGIS, 오픈소스, 타사 API를 사용하여 ArcGIS 위치 서비스에 접근하는 방법을 알아보세요.</p>
+      <p>API 키를 사용하여 ArcGIS 위치 서비스 및 비공개 콘텐츠 항목에 접근하세요.</p>
+    </>
+  )
 }
 
 
